@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-page="planning">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Build a browser-private, tailored visit outline for Abha with Sirius.">
+  <title>Sirius | Plan your Abha trip</title>
+  <script>try{const p=JSON.parse(localStorage.getItem("sirius-abha-ui-v1"));if(p&&["light","dark"].includes(p.theme))document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a>
+  <div class="site-shell inner-page scenic-page planner-scenic">
+    <div class="page-background" aria-hidden="true"><div class="page-background-day"></div><div class="page-background-night"></div><div class="page-background-scrim"></div></div>
+    <div class="pattern-rail pattern-rail-start" aria-hidden="true"></div><div class="pattern-rail pattern-rail-end" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Sirius — Abha home"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Sirius</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-drawer"><span></span><span></span><span></span></button>
+    </header>
+    <aside class="drawer" id="site-drawer" aria-label="Site navigation" aria-hidden="true">
+      <div class="drawer-top"><p class="eyebrow" data-i18n="drawerEyebrow">YOUR ABHA COMPANION</p><button class="drawer-close" type="button" aria-label="Close navigation menu">×</button></div>
+      <nav class="drawer-nav" aria-label="Primary navigation"><a href="index.html" data-i18n="navHome">Discover Abha</a><a class="active" href="trip-planning.html" data-i18n="navPlanning">Trip Planning</a><a href="tourist-attractions.html" data-i18n="navAttractions">Tourist Attractions</a></nav>
+      <div class="drawer-controls"><div class="control-set"><span data-i18n="themeLabel">Appearance</span><button class="theme-toggle switch-control" type="button" aria-pressed="false"><span class="switch-text" data-i18n="themeLight">Light</span></button></div><div class="control-set"><span data-i18n="languageLabel">Language</span><button class="language-toggle text-control" type="button" aria-pressed="false">العربية</button></div></div>
+      <p class="drawer-note" data-i18n="drawerNote">Made for slow, memorable journeys through the highlands.</p>
+    </aside><div class="drawer-scrim" aria-hidden="true"></div>
+
+    <main id="main-content" class="planner-page page-padding">
+      <section class="page-hero planner-hero reveal-section">
+        <div class="page-hero-pattern" aria-hidden="true"></div>
+        <p class="section-kicker ink" data-i18n="planningKicker">SIRIUS TRIP PLANNING</p>
+        <h1 data-i18n="planningTitle">Make Abha<br>feel like yours.</h1>
+        <p class="page-intro" data-i18n="planningIntro">Choose your travel rhythm and Sirius will shape a simple mountain-day outline around it. Your choices stay only in this browser.</p>
+      </section>
+
+      <div class="planner-layout">
+        <section class="planner-form-wrap" aria-labelledby="preferences-title">
+          <div class="section-heading"><p class="eyebrow ink" data-i18n="stepOne">01 · YOUR PREFERENCES</p><h2 id="preferences-title" data-i18n="preferencesTitle">Who is travelling?</h2></div>
+          <form id="planner-form" novalidate>
+            <fieldset class="field-group"><legend data-i18n="travelerLabel">Number of travellers</legend><label class="sr-only" for="traveler-count" data-i18n="travelerLabel">Number of travellers</label><div class="number-field"><button type="button" class="number-step" data-step="-1" aria-label="Decrease number of travellers">−</button><input id="traveler-count" name="travelers" type="number" min="1" max="12" value="2" inputmode="numeric" required><button type="button" class="number-step" data-step="1" aria-label="Increase number of travellers">+</button></div><p class="field-hint" data-i18n="travelerHint">Choose between 1 and 12 people.</p><p class="field-error" id="traveler-error" aria-live="polite"></p></fieldset>
+
+            <fieldset class="field-group"><legend data-i18n="personaLabel">Your travel style</legend><p class="field-hint" data-i18n="personaHint">Select one or more styles that sound like your group.</p><div class="persona-grid" id="persona-grid">
+              <button class="persona-card" type="button" data-persona="adventurer" aria-pressed="false"><span class="persona-number">01</span><strong data-i18n="personaAdventurer">Adventurers</strong><small data-i18n="personaAdventurerDesc">Trails, viewpoints, fresh air</small></button>
+              <button class="persona-card" type="button" data-persona="heritage" aria-pressed="false"><span class="persona-number">02</span><strong data-i18n="personaHeritage">Cultural & Heritage Explorers</strong><small data-i18n="personaHeritageDesc">Craft, stories, old villages</small></button>
+              <button class="persona-card" type="button" data-persona="lifestyle" aria-pressed="false"><span class="persona-number">03</span><strong data-i18n="personaLifestyle">Lifestyle & Urban</strong><small data-i18n="personaLifestyleDesc">Art, cafés, city strolls</small></button>
+              <button class="persona-card" type="button" data-persona="family" aria-pressed="false"><span class="persona-number">04</span><strong data-i18n="personaFamily">Family & Kid-Friendly</strong><small data-i18n="personaFamilyDesc">Easy moments together</small></button>
+            </div><p class="field-error" id="persona-error" aria-live="polite"></p></fieldset>
+
+            <div class="form-actions"><button class="button button-dark" type="submit" data-i18n="tailorButton">Tailor my visit <span aria-hidden="true">↗</span></button><button class="button button-quiet load-example" type="button" data-i18n="loadExample">Load example</button><button class="button button-quiet clear-plan" type="button" data-i18n="clearPlan">Clear saved plan</button></div><p class="form-status" id="form-status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <aside class="plan-output" aria-live="polite" aria-labelledby="outline-title">
+          <div class="plan-output-top"><p class="eyebrow" data-i18n="yourOutline">YOUR OUTLINE</p><span class="plan-seal" aria-hidden="true">S</span></div>
+          <h2 id="outline-title" data-i18n="outlineTitle">A day with room to wander.</h2>
+          <p class="output-summary" id="plan-summary"></p>
+          <ol class="itinerary-list" id="itinerary-list"></ol>
+          <div class="packing-note"><p class="eyebrow" data-i18n="packingLabel">BRING ALONG</p><p id="packing-note"></p></div>
+        </aside>
+      </div>
+
+      <section class="season-section" aria-labelledby="season-title">
+        <div class="section-heading"><p class="eyebrow ink" data-i18n="stepTwo">02 · FIND YOUR SEASON</p><h2 id="season-title" data-i18n="seasonTitle">When will you be there?</h2><p class="section-description" data-i18n="seasonIntro">Choose a month for seasonal planning advice — not a live weather forecast.</p></div>
+        <div class="month-selector" role="group" aria-label="Choose a visit month" id="month-selector"></div>
+        <div class="season-card" id="season-card"><div><p class="eyebrow" data-i18n="seasonalAdvice">SEASONAL PLANNING ADVICE</p><h3 id="season-heading"></h3><p id="season-description"></p></div><div class="season-place"><span data-i18n="seasonPlace">A fitting stop</span><strong id="season-place"></strong></div></div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>© Sirius</span><span data-i18n="footerTagline">Follow the mountain light.</span></footer>
+  </div>
+  <script src="sample-data/data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-page="attractions">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore natural, cultural, and culinary moments around Abha with Sirius.">
+  <title>Sirius | Abha attractions</title>
+  <script>try{const p=JSON.parse(localStorage.getItem("sirius-abha-ui-v1"));if(p&&["light","dark"].includes(p.theme))document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a>
+  <div class="site-shell inner-page scenic-page attractions-scenic">
+    <div class="page-background" aria-hidden="true"><div class="page-background-day"></div><div class="page-background-night"></div><div class="page-background-scrim"></div></div>
+    <div class="pattern-rail pattern-rail-start" aria-hidden="true"></div><div class="pattern-rail pattern-rail-end" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Sirius — Abha home"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Sirius</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-drawer"><span></span><span></span><span></span></button>
+    </header>
+    <aside class="drawer" id="site-drawer" aria-label="Site navigation" aria-hidden="true"><div class="drawer-top"><p class="eyebrow" data-i18n="drawerEyebrow">YOUR ABHA COMPANION</p><button class="drawer-close" type="button" aria-label="Close navigation menu">×</button></div><nav class="drawer-nav" aria-label="Primary navigation"><a href="index.html" data-i18n="navHome">Discover Abha</a><a href="trip-planning.html" data-i18n="navPlanning">Trip Planning</a><a class="active" href="tourist-attractions.html" data-i18n="navAttractions">Tourist Attractions</a></nav><div class="drawer-controls"><div class="control-set"><span data-i18n="themeLabel">Appearance</span><button class="theme-toggle switch-control" type="button" aria-pressed="false"><span class="switch-text" data-i18n="themeLight">Light</span></button></div><div class="control-set"><span data-i18n="languageLabel">Language</span><button class="language-toggle text-control" type="button" aria-pressed="false">العربية</button></div></div><p class="drawer-note" data-i18n="drawerNote">Made for slow, memorable journeys through the highlands.</p></aside>
+    <div class="drawer-scrim" aria-hidden="true"></div>
+
+    <main id="main-content" class="attractions-page page-padding">
+      <section class="page-hero attractions-hero reveal-section">
+        <p class="section-kicker" data-i18n="attractionsKicker">A CURATED ABHA</p>
+        <h1 data-i18n="attractionsTitle">Places worth<br>taking your time.</h1>
+        <p class="page-intro" data-i18n="attractionsIntro">Follow mountain air, meaningful craft, and unhurried tables. Each stop is a doorway into the rhythm of Abha.</p>
+      </section>
+
+      <section class="attractions-content" aria-labelledby="browse-title">
+        <div class="browse-heading"><div><p class="eyebrow ink" data-i18n="browseKicker">BROWSE BY MOOD</p><h2 id="browse-title" data-i18n="browseTitle">Choose your kind of day.</h2></div><a class="text-link ink-link" href="trip-planning.html" data-i18n="plannerPrompt">Need a route? Plan it <span aria-hidden="true">→</span></a></div>
+        <div class="filter-bar" role="group" aria-label="Filter attractions">
+          <button type="button" class="filter-button active" data-filter="all" aria-pressed="true" data-i18n="filterAll">All places</button>
+          <button type="button" class="filter-button" data-filter="restaurant" aria-pressed="false" data-i18n="filterRestaurant">Restaurants</button>
+          <button type="button" class="filter-button" data-filter="cafe" aria-pressed="false" data-i18n="filterCafe">Cafes</button>
+          <button type="button" class="filter-button" data-filter="nature" aria-pressed="false" data-i18n="filterNature">Natural Attractions</button>
+          <button type="button" class="filter-button" data-filter="heritage" aria-pressed="false" data-i18n="filterHeritage">Heritage Sites</button>
+        </div>
+        <div class="attraction-grid" id="attraction-grid"></div>
+        <p class="empty-state" id="empty-state" hidden data-i18n="emptyAttractions">No places match this category yet. Choose another mood.</p>
+      </section>
+    </main>
+    <footer class="site-footer"><span>© Sirius</span><span data-i18n="footerTagline">Follow the mountain light.</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
